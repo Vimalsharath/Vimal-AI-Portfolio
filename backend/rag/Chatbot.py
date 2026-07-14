@@ -21,7 +21,7 @@ embeddings = HuggingFaceEmbeddings(
 # Load Chroma database
 
 db = Chroma(
-    persist_directory="./chroma_db",
+    persist_directory="rag/chroma_db"
     embedding_function=embeddings
 )
 
