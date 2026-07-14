@@ -17,11 +17,10 @@ embeddings = HuggingFaceEmbeddings(
     model_name="sentence-transformers/all-MiniLM-L6-v2"
 )
 
-
 # Load Chroma database
 
 db = Chroma(
-    persist_directory="rag/chroma_db"
+    persist_directory="rag/chroma_db",
     embedding_function=embeddings
 )
 
