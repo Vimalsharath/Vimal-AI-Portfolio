@@ -3,6 +3,8 @@ uvicorn
 langchain
 langchain-groq
 langchain-community
+langchain-huggingface
 chromadb
+sentence-transformers
 python-dotenv
 pypdf
