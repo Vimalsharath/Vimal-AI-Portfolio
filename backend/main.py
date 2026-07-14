@@ -7,35 +7,26 @@ from rag.Chatbot import ask_ai
 app = FastAPI()
 
 
-# Allow React frontend
-
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:5173"
-    ],
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
 
-
 @app.get("/")
 def home():
-
     return {
         "message": "Vimal AI Backend Running"
     }
 
 
-
 @app.post("/chat")
-def chat(question: dict):
+def chat(data: dict):
 
-    user_question = question["question"]
-
-    answer = ask_ai(user_question)
+    answer = ask_ai(data["question"])
 
     return {
         "answer": answer
