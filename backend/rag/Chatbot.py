@@ -1,7 +1,7 @@
 from dotenv import load_dotenv
 
 from langchain_community.vectorstores import Chroma
-from langchain_community.embeddings import HuggingFaceEmbeddings
+from langchain_google_genai import GoogleGenerativeAIEmbeddings
 
 from langchain_groq import ChatGroq
 
@@ -12,9 +12,8 @@ load_dotenv()
 
 
 # Load embeddings
-
-embeddings = HuggingFaceEmbeddings(
-    model_name="sentence-transformers/all-MiniLM-L6-v2"
+embeddings = GoogleGenerativeAIEmbeddings(
+    model="models/gemini-embedding-001"
 )
 
 # Load Chroma database

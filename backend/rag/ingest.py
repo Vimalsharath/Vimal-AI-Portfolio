@@ -1,70 +1,37 @@
-import os
-
 from dotenv import load_dotenv
 
 from langchain_community.document_loaders import TextLoader
-
 from langchain_text_splitters import RecursiveCharacterTextSplitter
-
-from langchain_community.embeddings import HuggingFaceEmbeddings
-
+from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from langchain_community.vectorstores import Chroma
-
 
 load_dotenv()
 
-
-# Location of resume data
-DATA_PATH = "data/resume.txt"
-
-
 # Load resume text
-
-loader = TextLoader(
-    DATA_PATH,
-    encoding="utf-8"
-)
-
+loader = TextLoader("data/resume.txt", encoding="utf-8")
 documents = loader.load()
 
-
-print("Loaded documents:", len(documents))
-
-
-
-# Split text into chunks
-
-text_splitter = RecursiveCharacterTextSplitter(
+# Split into chunks
+splitter = RecursiveCharacterTextSplitter(
     chunk_size=500,
-    chunk_overlap=100
+    chunk_overlap=50
 )
 
+chunks = splitter.split_documents(documents)
 
-chunks = text_splitter.split_documents(documents)
+print(f"Loaded {len(documents)} document(s)")
+print(f"Created {len(chunks)} chunks")
 
-
-print("Created chunks:", len(chunks))
-
-
-
-# Create embeddings
-
-embeddings = HuggingFaceEmbeddings(
-    model_name="sentence-transformers/all-MiniLM-L6-v2"
+# Gemini embeddings
+embeddings = GoogleGenerativeAIEmbeddings(
+    model="models/gemini-embedding-001"
 )
 
-
-
-# Store in ChromaDB
-
+# Create ChromaDB
 db = Chroma.from_documents(
     documents=chunks,
     embedding=embeddings,
-    persist_directory="./chroma_db"
+    persist_directory="rag/chroma_db"
 )
-
-
-db.persist()
-
 
 print("ChromaDB created successfully!")
