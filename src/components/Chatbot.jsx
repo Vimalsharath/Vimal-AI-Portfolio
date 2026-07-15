@@ -34,20 +34,22 @@ function Chatbot() {
     try {
 
       const response = await fetch(
-        "http://127.0.0.1:8000/chat",
+        "https://vimal-ai-portfolio.onrender.com/chat",
         {
           method:"POST",
           headers:{
             "Content-Type":"application/json"
           },
-          body:JSON.stringify({
-            question:input
-          })
+          body: JSON.stringify({
+          question: input
+        })
         }
       );
 
 
       const data = await response.json();
+      console.log("BACKEND RESPONSE:", data);
+      console.log("ANSWER:", data.answer);
 
 
       setMessages(prev=>[
