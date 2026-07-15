@@ -3,9 +3,7 @@ uvicorn
 langchain
 langchain-groq
 langchain-community
-langchain-huggingface
 langchain-google-genai
 chromadb
-sentence-transformers
 python-dotenv
 pypdf
