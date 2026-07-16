@@ -1,3 +1,12 @@
+<p align="center">
+
+<img src="https://img.shields.io/badge/Status-Active-success?style=for-the-badge"/>
+
+<img src="https://img.shields.io/badge/Maintained-Yes-blue?style=for-the-badge"/>
+
+<img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge"/>
+
+</p>
 # 🤖 AI-Powered Portfolio Assistant using RAG and LLM
 
 An intelligent AI chatbot integrated into my personal portfolio website that can answer questions about my skills, projects, experience, and background using Retrieval-Augmented Generation (RAG).
