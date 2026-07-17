@@ -24,8 +24,8 @@ def home():
 
 @app.post("/chat")
 def chat(data: dict):
-
-    answer = ask_ai(data["question"])
+    question = data.get("question", "") if isinstance(data, dict) else ""
+    answer = ask_ai(question)
 
     return {
         "answer": answer

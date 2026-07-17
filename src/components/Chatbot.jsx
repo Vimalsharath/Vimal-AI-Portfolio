@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { FaRobot, FaPaperPlane, FaTimes } from "react-icons/fa";
+import { getFallbackReply } from "./chatbotUtils";
 
 
 function Chatbot() {
@@ -21,18 +22,19 @@ function Chatbot() {
 
     if (!input.trim()) return;
 
+    const question = input.trim();
 
     setMessages(prev => [
       ...prev,
       {
         role:"user",
-        text:input
+        text:question
       }
     ]);
 
+    setInput("");
 
     try {
-
       const response = await fetch(
         "https://vimal-ai-portfolio.onrender.com/chat",
         {
@@ -40,42 +42,34 @@ function Chatbot() {
           headers:{
             "Content-Type":"application/json"
           },
-          body: JSON.stringify({
-          question: input
-        })
+          body: JSON.stringify({ question })
         }
       );
 
+      if (!response.ok) {
+        throw new Error(`Request failed with ${response.status}`);
+      }
 
       const data = await response.json();
-      console.log("BACKEND RESPONSE:", data);
-      console.log("ANSWER:", data.answer);
-
+      const answer = data?.answer || getFallbackReply(question);
 
       setMessages(prev=>[
         ...prev,
         {
           role:"bot",
-          text:data.answer
+          text:answer
         }
       ]);
-
 
     } catch {
-
       setMessages(prev=>[
         ...prev,
         {
           role:"bot",
-          text:"Unable to connect with AI backend."
+          text:getFallbackReply(question)
         }
       ]);
-
     }
-
-
-    setInput("");
-
   };
 
 
