@@ -89,15 +89,19 @@ const portfolioData = {
 
   certifications: [
 
-    "NCVET Skill Competency Certification",
+  "NPTEL Certified – Python for Data Science",
 
-    "Forage / TATA - Data Visualization: Empowering Business with Effective Insights",
+  "National Level Hackathon Participant",
 
-    "Python for Data Science Internship Certificate",
+  "National Level Conference Participant",
 
-    "Prince Infotech Technical Workshop"
+  "Forage / TATA Certified – Data Visualization: Empowering Business with Effective Insights",
 
-  ],
+  "Simplilearn / SkillUp Certified – Introduction to SQL" , 
+
+  "Prince Infotech Technical Workshop"
+
+],
 
 
   projects: [
