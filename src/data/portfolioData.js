@@ -28,53 +28,66 @@ const portfolioData = {
 
   skills: {
 
-    Programming: [
-      "Python",
-      "Java",
-      "C",
-      "JavaScript",
-      "HTML",
-      "CSS"
-    ],
+  Programming: [
+    "Python",
+    "Java",
+    "Kotlin",
+    "C",
+    "JavaScript",
+    "HTML",
+    "CSS"
+  ],
 
-    AI_ML: [
-      "Machine Learning",
-      "Deep Learning",
-      "Generative AI",
-      "RAG",
-      "LangChain",
-      "ChromaDB"
-    ],
+  AI_ML: [
+    "Machine Learning",
+    "Deep Learning",
+    "Generative AI",
+    "Retrieval-Augmented Generation (RAG)",
+    "LangChain",
+    "ChromaDB",
+    "TensorFlow"
+  ],
 
-    Frameworks: [
-      "React",
-      "FastAPI"
-    ],
+  Mobile_Development: [
+    "Android Development",
+    "Jetpack Compose",
+    "Room Database",
+    "MVVM"
+  ],
 
-    Tools: [
-      "Git",
-      "GitHub",
-      "VS Code"
-    ]
+  Frameworks: [
+    "React",
+    "FastAPI"
+  ],
 
-  },
+  Databases: [
+    "MySQL",
+    "SQLite",
+    "ChromaDB"
+  ],
 
+  Tools: [
+    "Git",
+    "GitHub",
+    "Android Studio",
+    "VS Code",
+    "Postman"
+  ]
+
+},
 
   internships: [
-   {
+    {
       company: "FutureIntern",
       role: "Web Development Intern",
       duration: "2025",
       description:
         "Developed portfolio website and weather forecasting application using API integration."
     }
-
   ],
 
 
   certifications: [
-
-    "AWS Certified Cloud Practitioner",
 
     "NCVET Skill Competency Certification",
 
@@ -87,17 +100,14 @@ const portfolioData = {
   ],
 
 
-
   projects: [
 
     {
-      title:
-      "AI Portfolio with RAG Chatbot",
+      title: "AI Portfolio with RAG Chatbot",
 
-      image:
-      "/images/portfolio.png",
+      image: "/images/portfolio.png",
 
-      technologies:[
+      technologies: [
         "React",
         "FastAPI",
         "LangChain",
@@ -106,18 +116,16 @@ const portfolioData = {
       ],
 
       description:
-      "AI-powered portfolio website that uses Retrieval Augmented Generation to answer questions about my resume, skills and projects."
+        "AI-powered portfolio website that uses Retrieval Augmented Generation to answer questions about my resume, skills and projects."
     },
 
 
     {
-      title:
-      "Alzheimer's Disease Prediction",
+      title: "Alzheimer's Disease Prediction",
 
-      image:
-      "/images/alzheimer.png",
+      image: "/images/alzheimer.webp",
 
-      technologies:[
+      technologies: [
         "Python",
         "TensorFlow",
         "RCNN",
@@ -125,48 +133,62 @@ const portfolioData = {
       ],
 
       description:
-      "Deep learning model using RCNN with ResNet50 backbone to classify Alzheimer's MRI images."
-    },
-
-{
-      title:
-      "Weather Forecasting Application",
-
-      image:
-      "/images/weather.png",
-
-      technologies:[
-        "HTML",
-        "CSS",
-        "JavaScript",
-        "Weather API"
-      ],
-
-      description:
-      "Weather application providing real-time weather information using API integration."
+        "Deep learning model using RCNN with ResNet50 backbone to classify Alzheimer's MRI images."
     },
 
 
     {
-      title:
-      "Police Department ERP Model",
+      title: "AI Resume / Interview Assistant",
 
-      image:
-      "/images/police.png",
+      image: "/images/resume-ai.png",
 
-      technologies:[
-        "Java",
-        "Database",
-        "ERP"
+      technologies: [
+        "Python",
+        "LangChain",
+        "RAG",
+        "Groq"
       ],
 
       description:
-      "ERP system for police case registration, assignment and deployment management."
-    }
+        "AI-based assistant that analyzes resume content and answers interview-related questions using Retrieval Augmented Generation."
+    },
+
+
+    {
+      title: "Intelligent Study Planner Mobile Application",
+
+      image: "/images/studyplanner.png",
+
+      technologies: [
+        "Kotlin",
+        "Jetpack Compose",
+        "Room Database",
+        "Android Studio"
+      ],
+
+      description:
+        "Android mobile application that helps students manage subjects, tasks, study schedules and progress tracking using Jetpack Compose."
+    },
+
+
+    {
+    title: "Police Department ERP Model",
+
+    image: "/images/police.webp",
+
+    technologies: [
+      "Java",
+      "MySQL",
+      "ERP",
+      "Database Management"
+    ],
+
+    description:
+      "Enterprise Resource Planning (ERP) system for police departments to manage case registration, officer assignments, complaint tracking and administrative operations efficiently."
+  }
 
   ]
 
 };
-
 
 export default portfolioData;
